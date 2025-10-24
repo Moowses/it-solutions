@@ -42,7 +42,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 text-neutral-300 max-w-2xl">
             We design and deploy custom website & app solutions, integrate CRMs with powerful automations,
-            and deliver security (VPN), storage, and managed services—tailored to your operations.
+            and deliver security (VPN), storage, and managed services tailored to your operations.
           </p>
           <div className="mt-8 flex gap-3">
             <a
