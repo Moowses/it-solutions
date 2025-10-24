@@ -71,7 +71,7 @@ export default function HomePage() {
           points={[
             "Discovery-first architecture & roadmapping",
             "Next.js (Node.js), REST/GraphQL APIs, databases",
-            "iOS/Android mobile apps (React Native/Expo)",
+            "iOS/Android mobile apps (React Native/Expo or native)",
             "Static or dynamic—built for speed & SEO",
           ]}
         />
@@ -103,7 +103,7 @@ export default function HomePage() {
       <section id="other-services" className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="text-2xl md:text-3xl font-semibold">Other Services</h2>
         <p className="mt-2 text-neutral-300">
-          A broader capability set to fit your roadmap—kept vendor-agnostic.
+          A broader capability set to fit your roadmap kept vendor-agnostic.
         </p>
 
         <div className="mt-8 grid md:grid-cols-3 gap-6 text-sm">
