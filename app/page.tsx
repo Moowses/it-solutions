@@ -81,8 +81,8 @@ export default function HomePage() {
           points={[
             "Set up and manage CRM pipelines (e.g., HubSpot, GHL)",
             "Automations for onboarding, sales, and support",
-            "Create automated webinars (evergreen funnels)",
-            "Turn recorded webinars into live-like scheduled events",
+            "Create customized and automated webinars ",
+            "Turn recorded webinars into live-like scheduled events with an AI assistant that answers audience questions",
             "Event/webinar flows, email/SMS drip campaigns",
           ]}
         />
