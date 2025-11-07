@@ -55,7 +55,7 @@ export default function HomePage() {
               href="#contact"
               className="rounded-xl border border-white/20 px-5 py-3 text-sm hover:bg-white/5"
             >
-              Get a Quote
+              Get a Quote..
             </a>
           </div>
         </div>
