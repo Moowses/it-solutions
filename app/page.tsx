@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-xs uppercase tracking-[0.25em] text-blue-300/80">Discover • Design • Build • Deploy</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold leading-tight">
-            Build secure, automated, and scalable systems <span className="text-blue-400">for your business</span>.
+            Build secured, automated, and scalable systems <span className="text-blue-400">for your business</span>.
           </h1>
           <p className="mt-5 text-neutral-300 max-w-2xl">
             We design and deploy custom website & app solutions, integrate CRMs with powerful automations,
