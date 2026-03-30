@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "IT Business Solutions | KarlMosses.com",
+  title: "Karl Mosses | Business IT Solutions",
   description:
-    "Customized software, CRM automations, VPN & security, storage, and managed services. Build your systems with confidence.",
+    "Business IT solutions for systems, automation, and security implementation.",
   icons: { icon: "/favicon.ico" },
 };
 
