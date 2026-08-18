@@ -19,3 +19,16 @@ Hosting should be selected based on the application's technical requirements, no
 
 Guideline:
 Choose the simplest infrastructure that satisfies performance and scaling requirements.
+
+## Vercel Deployment Settings
+
+This repository is ready for the normal Vercel Git import flow.
+
+- Framework Preset: Next.js
+- Root Directory: `.`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: leave as the Next.js default
+- Node.js: `>=20.9.0`
+
+Do not add a custom `vercel.json` unless the project later needs redirects, headers, or a non-default build command.
