@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="container two-column">
             <div className="section-header compact-header">
               <h2>Professional story.</h2>
-              <p>From part-time web work to leading IT operations for a growing business.</p>
+              <p>A career shaped by network operations, development, and IT leadership.</p>
               <ul className="profile-facts">
                 {profileFacts.map((fact) => (
                   <li key={fact}>{fact}</li>
@@ -73,24 +73,37 @@ export default function AboutPage() {
             </div>
             <div className="text-panel">
               <p>
-                I started at Cottage Dream Vacations as a part-time Web Developer / Technical VA in August 2022 while
-                working an evening schedule after ViewQwest. The work included websites, WordPress and WooCommerce
-                solutions, booking tools, dashboards, APIs, and automation.
+                My range of skills comes from working where technology meets day-to-day operations.
+                At ViewQwest, I progressed from Network Support Engineer to NOC Engineer, troubleshooting
+                connectivity, monitoring services, and coordinating incidents with clients, carriers,
+                field technicians, and vendors. That experience taught me to think beyond a single
+                device or application and understand how an entire service depends on its parts.
               </p>
               <p>
-                In October 2024, that work expanded into a full-time IT Manager role covering IT operations, digital
-                infrastructure, system administration, deployments, stakeholder communication, third-party vendors, and
-                business-system integrations.
+                In August 2022, I began part-time web development work for Cottage Dream Vacations
+                alongside my ViewQwest role. Websites grew into booking applications, dashboards,
+                loyalty tools, and integrations connecting CRM, marketing, payments, and internal
+                systems. Development gave me another way to solve operational problems: build the
+                missing connection or simplify a task people repeat every day.
               </p>
               <p>
-                At ViewQwest, I worked as a Network Support Engineer from July 2020 to August 2022 and was promoted to
-                Network Operations Center Engineer from September 2022 to January 2025. That work covered incidents,
-                monitoring, corporate connectivity, field coordination, migrations, providers, and technical escalations.
+                My promotion to IT Manager in October 2024 expanded that responsibility to infrastructure,
+                access, deployments, support priorities, budgets, and vendor coordination. I work with
+                leadership and different departments to understand their requirements, agree on priorities,
+                and deliver technology that supports the company&apos;s goals.
               </p>
               <p>
-                I also expanded my experience through freelance CCTV, networking, VPN, point-to-point internet, and
-                web-system projects. Since January 2026, I have worked part-time as a Computer Systems Servicing trainer
-                at Damla Training Institute of Technology, Inc.
+                I look for ways to reduce repetitive work and unnecessary costs while protecting
+                reliability, security, and the quality of the result. Sometimes that means automation;
+                sometimes it means improving an existing system or choosing a more suitable service.
+                The aim is to give teams dependable tools and more time to serve customers and grow
+                the business.
+              </p>
+              <p>
+                Freelance infrastructure and software projects keep that work hands-on. Since January
+                2026, I have also taught Computer Systems Servicing part-time at Damla Training
+                Institute of Technology, Inc., helping learners turn technical concepts into practical
+                troubleshooting and support skills.
               </p>
               <a
                 className="button primary-button"
@@ -146,8 +159,7 @@ export default function AboutPage() {
             <div className="section-header">
               <h2>Career timeline.</h2>
               <p>
-                Most recent roles first, including the real overlap between ViewQwest and part-time Cottage Dream
-                Vacations work.
+                My progression through technical support, development, IT management, and training.
               </p>
             </div>
             <div className="timeline">

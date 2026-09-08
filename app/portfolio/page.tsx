@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ProjectScreenshots } from "@/components/ProjectScreenshots";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -45,78 +45,12 @@ function getProjectGallery(project: DevelopmentProject) {
   return "gallery" in project ? project.gallery : [];
 }
 
-function ProjectVisual({ project, priority = false }: { project: DevelopmentProject; priority?: boolean }) {
-  const image = getProjectImage(project);
-
-  if (image) {
-    return (
-      <Image
-        className="project-cover-image"
-        src={image}
-        alt={`${project.title} portfolio preview`}
-        fill
-        priority={priority}
-        quality={priority ? 76 : 70}
-        sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 33vw"
-      />
-    );
-  }
-
-  return (
-    <div className={`project-visual project-visual-${project.theme}`} aria-hidden="true">
-      <div className="project-browser-bar">
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="project-visual-body">
-        <div>
-          <p>{project.category}</p>
-          <strong>{project.title}</strong>
-          <span>{project.platform}</span>
-        </div>
-        <div className="project-visual-panel">
-          <i />
-          <i />
-          <i />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProjectGallery({ project }: { project: DevelopmentProject }) {
-  const gallery = getProjectGallery(project);
-
-  if (!gallery.length) {
-    return null;
-  }
-
-  return (
-    <div className="project-gallery-strip" aria-label={`${project.title} supporting screenshots`}>
-      {gallery.map((image, index) => (
-        <div className="project-gallery-thumb" key={image}>
-          <Image
-            src={image}
-            alt={`${project.title} screenshot ${index + 1}`}
-            fill
-            quality={58}
-            sizes="(max-width: 760px) 38vw, 150px"
-          />
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function ProjectCard({ project, featured = false }: { project: DevelopmentProject; featured?: boolean }) {
   const url = getProjectUrl(project);
 
   return (
     <article className={`development-project-card${featured ? " is-featured" : ""}`}>
-      <div className="project-cover">
-        <ProjectVisual project={project} priority={featured} />
-      </div>
+      <ProjectScreenshots title={project.title} images={[...new Set([getProjectImage(project), ...getProjectGallery(project)].filter((image) => image !== undefined))]} priority={featured} />
       <div className="project-card-content">
         <div className="project-card-meta">
           <span>{project.category}</span>
@@ -137,7 +71,7 @@ function ProjectCard({ project, featured = false }: { project: DevelopmentProjec
           ))}
         </div>
 
-        <ProjectGallery project={project} />
+
 
         <div className="project-actions">
           {url ? (
@@ -147,21 +81,6 @@ function ProjectCard({ project, featured = false }: { project: DevelopmentProjec
           ) : null}
         </div>
       </div>
-    </article>
-  );
-}
-
-function MoreWorkCard() {
-  return (
-    <article className="more-work-card">
-      <div className="more-work-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 12h13M13 6l6 6-6 6" />
-        </svg>
-      </div>
-      <p>More work is available beyond the public screenshots.</p>
-      <h3>Private dashboards, automation flows, internal tools, and operational systems can be walked through when appropriate.</h3>
-      <a href="#automation">View automation work</a>
     </article>
   );
 }
@@ -177,26 +96,28 @@ export default function PortfolioPage() {
         <section className="development-hero">
           <div className="container development-hero-grid">
             <div>
-              <p className="intro-line">Portfolio / Website and Business Systems</p>
-              <h1>Portfolio work that turns websites into business systems.</h1>
+              <p className="intro-line">Karl Mosses Banlasan / Portfolio</p>
+              <h1>Web development & IT solutions.</h1>
               <p className="hero-text">
-                A focused view of my website, web application, mobile, WordPress, WooCommerce, AI assistance, and
-                automation work. The goal is simple: interfaces that look credible, systems that reduce manual work,
-                and technology that supports real business operations.
+                Websites, applications, and the infrastructure behind everyday business.
+                Explore my development projects and IT work across systems administration,
+                network planning, on-site support, and automation.
               </p>
               <div className="button-row">
                 <a className="button primary-button" href="#projects">
-                  View Portfolio Work
+                  Websites & Apps
                 </a>
-                <a className="button secondary-button" href={projectInquiryHref}>
-                  Discuss a Project
+                <a className="button secondary-button" href="#it-infrastructure">
+                  IT &amp; Infrastructure
                 </a>
               </div>
             </div>
             <aside className="development-hero-panel" aria-label="Portfolio focus">
               <p>Portfolio focus</p>
               <ul>
-                <li>Business websites that present services clearly</li>
+                <li>Websites, web apps, and e-commerce</li>
+                <li>Systems administration and managed IT support</li>
+                <li>Building network design and IT consulting</li>
                 <li>Booking, enrollment, RSVP, billing, inventory, and rewards systems</li>
                 <li>WordPress, WooCommerce, and custom-code implementation</li>
                 <li>AI assistants for patient, member, and support workflows</li>
@@ -219,7 +140,7 @@ export default function PortfolioPage() {
               {spotlightProjects.map((project, index) => (
                 <ProjectCard project={project} featured={index < 2} key={project.slug} />
               ))}
-              <MoreWorkCard />
+
             </div>
           </div>
         </section>
@@ -268,10 +189,11 @@ export default function PortfolioPage() {
         <section className="section-block dark-section" id="automation">
           <div className="container">
             <div className="section-header">
-              <h2>Automation work.</h2>
+              <h2>Sales, customer, and operations automation.</h2>
               <p>
-                Automation is where the website becomes part of the operation: support assistants, booking workflows,
-                CRM movement, email follow-up, webhooks, and admin queues that reduce manual checking.
+                Lead capture, webinar engagement, customer follow-up, and operational handoffs.
+                My projects and workflow services connect business tools through n8n, Zapier,
+                GoHighLevel, and custom API integrations.
               </p>
             </div>
             <div className="automation-grid">
@@ -290,13 +212,14 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="section-block muted-section">
+        <section className="section-block muted-section" id="it-infrastructure">
           <div className="container">
             <div className="section-header">
-              <h2>Related IT delivery services.</h2>
+              <h2>IT infrastructure & field services.</h2>
               <p>
-                The development work connects naturally with business IT delivery: managed support, servers, CCTV,
-                point-to-point connectivity, secure remote access, and smart-hands implementation.
+                IT administration, building network planning, and hands-on implementation.
+                These service areas cover the systems, connectivity, and support businesses need
+                to keep their offices and sites running.
               </p>
             </div>
             <div className="infrastructure-grid">
@@ -326,10 +249,10 @@ export default function PortfolioPage() {
 
         <section className="section-block cta-section">
           <div className="container final-contact">
-            <h2>Need a website, dashboard, booking flow, or business web app?</h2>
+            <h2>Planning a website, an office network, or an IT upgrade?</h2>
             <p>
-              Send the goal, the workflow, and the systems involved. I can help scope the interface, build the
-              application, connect tools, and support the launch.
+              Tell me what you are planning and where you need support, from a new application
+              to network design, system administration, or ongoing IT operations.
             </p>
             <div className="button-row">
               <a className="button primary-button" href={projectInquiryHref}>

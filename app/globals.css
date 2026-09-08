@@ -609,6 +609,24 @@ button:focus-visible {
   object-position: top left;
 }
 
+.project-screenshots { position: relative; }
+.screenshot-open { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; }
+.screenshot-controls { position: absolute; left: 12px; bottom: 12px; display: flex; align-items: center; gap: 8px; padding: 4px; border-radius: 6px; background: #fff; color: #18181b; box-shadow: 0 2px 12px #0002; }
+.screenshot-arrow { display: inline-grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border: 1px solid #d4d4d8; border-radius: 4px; background: #fff; color: #18181b; font-size: 24px; cursor: pointer; }
+.screenshot-arrow:hover { background: #e4e4e7; }
+.screenshot-arrow:focus-visible, .screenshot-open:focus-visible { outline: 3px solid #2563eb; outline-offset: -3px; }
+.screenshot-controls span, .viewer-controls span { min-width: 42px; text-align: center; font-size: 14px; }
+.screenshot-dialog { position: fixed; inset: 0; margin: auto; width: min(1400px, 96vw); max-width: 96vw; max-height: 94dvh; padding: 0; border: 1px solid #52525b; border-radius: 8px; background: #09090b; color: #fff; }
+.screenshot-dialog::backdrop { background: #000c; }
+body:has(.screenshot-dialog[open]) { overflow: hidden; }
+.screenshot-viewer { padding: 12px; }
+.screenshot-viewer header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; }
+.screenshot-viewer header p { margin: 0; color: #fff; font-size: 16px; }
+.screenshot-full { position: relative; height: min(68dvh, 900px); }
+.screenshot-full img { object-fit: contain; }
+.viewer-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 12px; }
+#projects, #it-infrastructure { scroll-margin-top: 100px; }
+
 .project-gallery-strip {
   display: flex;
   gap: 10px;

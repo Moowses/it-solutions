@@ -418,10 +418,28 @@ export const automationHighlights = [
     tools: ["Signed tokens", "Guest dashboard", "RSVP workflow", "Resend email", "Announcement opt-in"],
   },
   {
-    title: "CRM and Marketing Automation",
+    title: "Lead Nurturing and Sales Automation",
     summary:
-      "Lead handling, CRM updates, funnel actions, email follow-up, SMS-style workflows, and campaign support for businesses that need cleaner handoffs.",
-    tools: ["GoHighLevel", "ClickFunnels", "Lead routing", "Email workflows", "Campaign operations"],
+      "CRM workflows for capturing inquiries, organizing leads, scheduling follow-up, and moving opportunities through the sales pipeline. Connect Meta Ads lead-generation campaigns with customer follow-up and sales handoffs.",
+    tools: ["GoHighLevel (GHL)", "n8n", "Zapier", "Meta Ads", "Lead nurturing", "Sales pipelines"],
+  },
+  {
+    title: "Webinar Registration and Engagement",
+    summary:
+      "Built a webinar platform with registration, session access, replay, and chat features. Per-webinar GoHighLevel webhook settings support integration planning for CRM and marketing workflows.",
+    tools: ["Next.js", "Firebase", "Webinar registration", "Replay and chat", "GHL webhook configuration"],
+  },
+  {
+    title: "Customer Lifecycle Automation",
+    summary:
+      "Workflow services for customer onboarding, booking updates, follow-up, and ongoing engagement. Connect CRM records and business applications so sales and support teams can work from consistent information.",
+    tools: ["GoHighLevel (GHL)", "n8n", "Zapier", "Make", "Customer onboarding", "Email workflows"],
+  },
+  {
+    title: "Business Operations and Delivery Workflows",
+    summary:
+      "Integrations across CRM, point of sale, accounting, e-commerce, and internal systems. Coordinate records and operational handoffs from a customer request through delivery and ongoing support.",
+    tools: ["REST APIs", "Webhooks", "K-Series POS", "QuickBooks", "WooCommerce", "Middleware"],
   },
   {
     title: "Webhooks and Business Integrations",
@@ -433,6 +451,14 @@ export const automationHighlights = [
 
 export const infrastructureServiceAreas = [
   {
+    title: "Building Network Design and IT Consulting",
+    label: "Planning and design",
+    image: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "Network planning for offices and buildings, from site surveys and coverage requirements to equipment selection, cabling coordination, and implementation handover.",
+    items: ["LAN and Wi-Fi layout", "Rack and structured cabling planning", "VLAN and IP addressing design", "Equipment recommendations and documentation"],
+  },
+  {
     title: "Managed IT and Smart Hands",
     label: "On-call support",
     image: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
@@ -441,7 +467,7 @@ export const infrastructureServiceAreas = [
     items: ["Onsite and remote support", "Endpoint setup", "Vendor coordination", "User troubleshooting"],
   },
   {
-    title: "Server and IT Operations",
+    title: "Systems Administration and Server Operations",
     label: "Business systems",
     image: "https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
     summary:
@@ -590,8 +616,14 @@ export const expertiseGroups = [
   {
     title: "CRM and Automation",
     items: [
+      "n8n",
+      "Zapier",
+      "Make",
       "CRM automation",
-      "GoHighLevel",
+      "GoHighLevel (GHL)",
+      "Lead nurturing and sales pipelines",
+      "Meta Ads lead workflows",
+      "Customer lifecycle automation",
       "Marketing automation",
       "ClickFunnels",
       "Lead management",
@@ -681,7 +713,7 @@ export const certificationItems = [
     issuerMark: "PAN",
     logoClass: "palo-alto",
     title: "Palo Alto Networks Certified Network Security Administrator - PCNSA",
-    date: "Credential period Apr 2024 - Apr 2026",
+    date: "Issued Apr 2024 - Expired Apr 2026",
     credentialId: "PAN00254220",
   },
   {
@@ -772,7 +804,7 @@ export const educationItems = [
     schoolMark: "UM",
     logoClass: "um",
     degree: "Bachelor's degree, Computer Science",
-    period: "Jun 2014 - Mar 2020",
+    period: "Completed",
     note: "Foundation in software development, systems, and computer networking.",
   },
   {
