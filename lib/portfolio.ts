@@ -1,7 +1,7 @@
 export const siteUrl = "https://karlmosses.com";
 export const ownerName = "Karl Mosses Banlasan";
 export const location = "Davao City, Philippines";
-export const contactEmail = "banlasan.m@gmail.com";
+export const contactEmail = "info@karlmosses.com";
 export const linkedInUrl = "https://www.linkedin.com/in/karl-mosses-banlasan-21aab8205/";
 export const resumeHref = "/resume.pdf";
 
@@ -11,7 +11,7 @@ export const projectInquiryHref = `mailto:${contactEmail}?subject=IT%20Business%
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
-  { label: "Work", href: "/work" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact" },
 ] as const;
@@ -144,6 +144,363 @@ export const workHighlights = [
       "Delivered tools that supported real operating tasks instead of standalone pages disconnected from the business process.",
   },
 ];
+
+export const developmentProjects = [
+  {
+    slug: "dreamtripclub-booking-system",
+    title: "DreamTripClub Membership Booking Platform",
+    category: "Web App",
+    platform: "Next.js, Node.js, Booking System",
+    url: "https://dreamtripclub.com/",
+    status: "Live rewards and booking platform",
+    theme: "travel",
+    image: "/project-uploads/dreamtripclub-booking-system/live-site.webp",
+    gallery: ["/project-uploads/dreamtripclub-booking-system/1.webp"],
+    isSpotlight: true,
+    summary:
+      "A membership-focused travel platform with resort search, rewards visibility, points redemption support, account access, and AI-assisted live chat for booking needs.",
+    deepDive: [
+      "Structured the product around member actions: searching stays, checking rewards, understanding points, and getting support without waiting for manual staff replies.",
+      "Added live chat support powered by OpenAI so members can ask about booking needs, reward points, redemption steps, and account guidance.",
+      "Designed the app as an operating platform for memberships and reservations, not only a public marketing site.",
+    ],
+    stack: ["Next.js", "React", "Node.js", "OpenAI", "Booking workflow", "Rewards", "REST APIs", "Vercel"],
+    uploadFolder: "/project-uploads/dreamtripclub-booking-system/",
+  },
+  {
+    slug: "damla-training-enrollment-system",
+    title: "Damla Training Institute Enrollment and LMS System",
+    category: "Website + Web App",
+    platform: "Training Website, Enrollment, Dashboard, LMS",
+    url: "https://damlatraining.com/",
+    status: "Public site with private dashboards",
+    theme: "education",
+    image: "/project-uploads/damla-training-enrollment-system/live-site.webp",
+    gallery: ["/project-uploads/damla-training-enrollment-system/1-redacted.webp"],
+    isSpotlight: true,
+    summary:
+      "A training-institute website and application experience supporting course discovery, online enrollment, dashboard workflows, and learning-management needs.",
+    deepDive: [
+      "Positioned the public site around TESDA-registered training programs, admissions, course exploration, and enrollment calls to action.",
+      "Designed the application side for enrollment handling, learner records, dashboard workflows, and training-operation visibility.",
+      "Balanced public credibility with back-office practicality so staff can manage training operations beyond a simple brochure site.",
+    ],
+    stack: ["React", "Next.js", "Dashboard UI", "Enrollment flow", "LMS workflow", "Forms", "Admin modules"],
+    uploadFolder: "/project-uploads/damla-training-enrollment-system/",
+  },
+  {
+    slug: "mosses-and-vanesa-rsvp-dashboard",
+    title: "Mosses and Vanesa Wedding Website and RSVP Dashboard",
+    category: "Website + Dashboard",
+    platform: "RSVP System, Guest Monitoring, Email Blast",
+    url: "https://www.mossesandvanesa.com/",
+    status: "Public site with private event dashboard",
+    theme: "event",
+    image: "/project-uploads/mosses-and-vanesa-rsvp-dashboard/online-invitation-redacted.webp",
+    gallery: [
+      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/1-redacted.webp",
+      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/2-redacted.webp",
+      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/3-redacted.webp",
+    ],
+    isSpotlight: true,
+    summary:
+      "A custom wedding website with guest-specific digital invitations, RSVP collection, guest monitoring, event communications, and email follow-up.",
+    deepDive: [
+      "Generated signed guest invitation links so each invited group receives a private RSVP experience tied to their record.",
+      "Made the guest RSVP flow controlled after submission, reducing accidental changes while keeping the invitation experience polished.",
+      "Built admin workflows for guest monitoring, RSVP status, table assignment, message review, announcement opt-in, and email notifications.",
+    ],
+    stack: ["Next.js", "React", "Firebase", "Signed RSVP links", "Guest dashboard", "Resend", "Email notifications"],
+    uploadFolder: "/project-uploads/mosses-and-vanesa-rsvp-dashboard/",
+  },
+  {
+    slug: "dental-clinic-system",
+    title: "Dental Clinic Patient, Billing, and Inventory System",
+    category: "Web App",
+    platform: "Clinic Operations System",
+    url: "https://dental-clinic-webapp-rust.vercel.app/",
+    status: "Public demo",
+    theme: "clinical",
+    image: "/project-uploads/dental-clinic-system/1-redacted.webp",
+    gallery: [
+      "/project-uploads/dental-clinic-system/2..webp",
+      "/project-uploads/dental-clinic-system/3..webp",
+      "/project-uploads/dental-clinic-system/4-redacted.webp",
+    ],
+    isSpotlight: true,
+    summary:
+      "A clinic operations web app covering patient booking, billing, inventory, treatment records, AI-assisted patient support, and admin appointment automation.",
+    deepDive: [
+      "Integrated a logged-in patient AI assistant powered by Gemini to help with appointment booking, cancellation guidance, service questions, and clinic support needs.",
+      "Built admin-side appointment queues and calendar views to reduce manual checking, avoid missed updates, and lower the need for extra staff just to monitor bookings.",
+      "Automated appointment coordination for both patients and dentists so scheduling, status changes, and operational handoff are handled with fewer manual errors.",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Gemini API", "Booking automation", "Billing", "Inventory"],
+    uploadFolder: "/project-uploads/dental-clinic-system/",
+  },
+  {
+    slug: "chauffeur-mobile-booking-app",
+    title: "Chauffeur Mobile Booking App",
+    category: "Mobile App Concept",
+    platform: "Mobile Booking Experience",
+    status: "Concept cover generated for portfolio",
+    theme: "mobility",
+    image: "/project-shots/chauffeur-mobile-booking-app.webp",
+    isSpotlight: true,
+    summary:
+      "A premium mobile booking interface concept for chauffeur reservations, route selection, vehicle choice, driver details, pricing, and scheduled rides.",
+    deepDive: [
+      "Mapped the experience around the booking decision: pickup, drop-off, time, vehicle class, driver trust signals, and fare confirmation.",
+      "Designed the UI direction to feel polished enough for an executive transport service while keeping the booking flow direct.",
+      "Prepared this as a visual portfolio concept because the production screenshots are not available in the repository.",
+    ],
+    stack: ["Mobile UI", "SwiftUI-ready structure", "Flutter-ready structure", "Booking UX", "Figma-style design"],
+    uploadFolder: "/project-uploads/chauffeur-mobile-booking-app/",
+  },
+  {
+    slug: "investors-growth-syndicate",
+    title: "Investor's Growth Syndicate",
+    category: "WordPress",
+    platform: "Custom WordPress Code",
+    url: "https://investorsgrowthsyndicate.com/",
+    status: "Live public site",
+    theme: "finance",
+    image: "/project-shots/investors-growth-syndicate.webp",
+    summary:
+      "A real-estate education and coaching website positioned around portfolio growth, private community access, courses, events, and mastermind programs.",
+    deepDive: [
+      "Built the public-facing experience around credibility, transformation-oriented messaging, community positioning, and clear discovery paths.",
+      "Supported WordPress customization needs for a content-rich business with coaching, course, event, and member-area touchpoints.",
+      "Kept the site suitable for marketing operations where landing pages, content updates, and lead-generation pages need to move quickly.",
+    ],
+    stack: ["WordPress", "Custom code", "Landing pages", "Responsive layout", "Lead generation", "Content architecture"],
+  },
+  {
+    slug: "ken-dunn",
+    title: "Ken Dunn Personal Brand Website",
+    category: "WordPress",
+    platform: "Founder and Portfolio Website",
+    url: "https://kendunn.com/",
+    status: "Live public site",
+    theme: "founder",
+    image: "/project-shots/ken-dunn.webp",
+    summary:
+      "A founder-led WordPress site connecting personal brand, entrepreneurship, resort ventures, real-estate projects, member access, and media presence.",
+    deepDive: [
+      "Organized the site to make the founder profile, ventures, authority signals, and member area easy to find from the first visit.",
+      "Supported a multi-venture content model where resorts, wellness, real estate, coaching, and updates can live under one professional brand.",
+      "Used WordPress as a practical operating platform for ongoing page updates, media publishing, and campaign content.",
+    ],
+    stack: ["WordPress", "Personal brand", "Responsive pages", "Content management", "Member-area links"],
+  },
+  {
+    slug: "cottage-dream-vacations",
+    title: "Cottage Dream Vacations",
+    category: "WordPress",
+    platform: "Hospitality and Vacation-Rental Website",
+    url: "https://cottagedreamvacations.com/",
+    status: "Live public site",
+    theme: "hospitality",
+    image: "/project-shots/cottage-dream-vacations.webp",
+    summary:
+      "A hospitality website supporting cottage discovery, resort storytelling, business credibility, property content, and vacation-rental interest.",
+    deepDive: [
+      "Structured the experience around resort discovery, family travel, property content, and business trust rather than a generic rental catalog.",
+      "Supported WordPress content operations for listings, resort pages, seasonal messaging, and customer-facing updates.",
+      "Aligned the website with a broader hospitality operation that also depends on booking workflows, CRM, marketing, and support systems.",
+    ],
+    stack: ["WordPress", "Hospitality content", "Property pages", "Responsive design", "Operations support"],
+  },
+  {
+    slug: "calabogie-peaks",
+    title: "Calabogie Peaks Resort",
+    category: "WordPress",
+    platform: "Resort Website",
+    url: "https://calabogie.com/",
+    status: "Live public site",
+    theme: "resort",
+    image: "/project-shots/calabogie-peaks.webp",
+    summary:
+      "A resort website experience for accommodations, mountain and lake activities, amenities, seasonal offers, events, and guest planning.",
+    deepDive: [
+      "Supported a content model that needs to serve different audiences: guests, event planners, activity seekers, and returning visitors.",
+      "Kept the public experience oriented around discovery, booking interest, amenities, and seasonal resort operations.",
+      "Worked within WordPress so operational teams can continue publishing offers, pages, and activity information as the resort changes.",
+    ],
+    stack: ["WordPress", "Resort content", "Guest experience", "Responsive layout", "CMS operations"],
+  },
+  {
+    slug: "canadian-hot-tub",
+    title: "Canadian Hot Tub",
+    category: "WooCommerce",
+    platform: "E-Commerce Store",
+    url: "https://canhottub.com/",
+    status: "Live commerce site",
+    theme: "commerce",
+    image: "/project-shots/canadian-hot-tub.webp",
+    summary:
+      "A WooCommerce product and commerce experience for hot tub sales, product education, order interest, and conversion-focused customer journeys.",
+    deepDive: [
+      "Supported product presentation, store operations, content updates, customer decision paths, and commerce-ready page structure.",
+      "Focused the experience on product clarity, trust, and checkout readiness instead of treating the site as a static catalog.",
+      "Kept the platform practical for ongoing offers, product pages, checkout flows, and marketing campaigns.",
+    ],
+    stack: ["WooCommerce", "WordPress", "Product pages", "Checkout flow", "Payment readiness", "Responsive commerce"],
+  },
+  {
+    slug: "canadian-cold-plunge",
+    title: "Canadian Cold Plunge",
+    category: "WooCommerce",
+    platform: "Product Commerce Website",
+    url: "https://canadiancoldplunge.com/",
+    status: "Live commerce site",
+    theme: "wellness",
+    image: "/project-shots/canadian-cold-plunge.webp",
+    summary:
+      "A WooCommerce product website for cold plunge sales, product positioning, app-led value proposition, promotions, and customer conversion.",
+    deepDive: [
+      "Structured the experience around product education, promotional urgency, product benefits, and a clear buying path.",
+      "Supported commerce content that combines physical product detail with wellness positioning and app-enabled product messaging.",
+      "Kept the site ready for changing campaigns, product content, and conversion-focused landing pages.",
+    ],
+    stack: ["WooCommerce", "WordPress", "Product storytelling", "Landing pages", "Responsive commerce", "Campaign content"],
+  },
+] as const;
+
+export const developmentSkillGroups = [
+  {
+    title: "Web Design and UI/UX",
+    items: ["Web design", "UI/UX", "Responsive design", "Wireframing", "Design systems", "Landing pages"],
+  },
+  {
+    title: "Front-End Development",
+    items: ["JavaScript", "TypeScript", "React.js", "Next.js", "Tailwind CSS", "HTML", "CSS", "API integration"],
+  },
+  {
+    title: "Back-End and Integrations",
+    items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Webhooks", "Python", "Authentication", "Vercel"],
+  },
+  {
+    title: "CMS and Commerce",
+    items: ["WordPress", "WooCommerce", "Webflow", "Custom code", "CMS operations", "Product pages", "Checkout flows"],
+  },
+  {
+    title: "Mobile Development",
+    items: ["Xcode", "Swift", "SwiftUI", "Flutter", "Java", "Kotlin", "Mobile booking UX"],
+  },
+  {
+    title: "Software Development",
+    items: [".NET", "C#", "Application support", "Dashboards", "Internal tools", "Business systems"],
+  },
+  {
+    title: "Tools and Business Platforms",
+    items: ["Figma", "GoHighLevel", "Jira", "CRM automation", "SendGrid", "Stripe", "PayPal", "DNS and SMTP"],
+  },
+] as const;
+
+export const automationHighlights = [
+  {
+    title: "AI Customer and Patient Assistance",
+    summary:
+      "Logged-in assistant flows for patient support, appointment questions, cancellation guidance, reward-point questions, booking help, and service information.",
+    tools: ["Gemini API", "OpenAI", "Prompt logic", "Authenticated support", "Knowledge-based answers"],
+  },
+  {
+    title: "Booking and Appointment Automation",
+    summary:
+      "Operational flows that reduce manual checking by keeping appointment status, queues, calendars, patient actions, and staff visibility connected.",
+    tools: ["Booking systems", "Calendar views", "Status workflows", "Patient and dentist coordination", "Admin queues"],
+  },
+  {
+    title: "Digital Invitation and RSVP Automation",
+    summary:
+      "Guest-specific invitation links, controlled RSVP submission, admin monitoring, message review, and announcement emails for event operations.",
+    tools: ["Signed tokens", "Guest dashboard", "RSVP workflow", "Resend email", "Announcement opt-in"],
+  },
+  {
+    title: "CRM and Marketing Automation",
+    summary:
+      "Lead handling, CRM updates, funnel actions, email follow-up, SMS-style workflows, and campaign support for businesses that need cleaner handoffs.",
+    tools: ["GoHighLevel", "ClickFunnels", "Lead routing", "Email workflows", "Campaign operations"],
+  },
+  {
+    title: "Webhooks and Business Integrations",
+    summary:
+      "Connections between websites, dashboards, payment tools, booking systems, communication platforms, and reporting workflows.",
+    tools: ["REST APIs", "Webhooks", "SendGrid", "Stripe", "PayPal", "Middleware"],
+  },
+] as const;
+
+export const infrastructureServiceAreas = [
+  {
+    title: "Managed IT and Smart Hands",
+    label: "On-call support",
+    image: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "Hands-on support for users, workstations, access, printers, branches, vendors, and daily IT operations when the business needs someone technical to own the follow-through.",
+    items: ["Onsite and remote support", "Endpoint setup", "Vendor coordination", "User troubleshooting"],
+  },
+  {
+    title: "Server and IT Operations",
+    label: "Business systems",
+    image: "https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "Support for servers, accounts, access, Microsoft 365, Active Directory, backups, documentation, and technical continuity across the company.",
+    items: ["Windows Server", "Microsoft 365", "Active Directory", "Backup readiness"],
+  },
+  {
+    title: "CCTV Installation and Site Survey",
+    label: "Site security",
+    image: "https://images.pexels.com/photos/13168513/pexels-photo-13168513.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "Security-camera planning and installation support, including site review, camera placement, DVR/NVR setup, cabling coordination, remote viewing, and turnover.",
+    items: ["Site survey", "DVR/NVR setup", "Camera layout", "Remote viewing"],
+  },
+  {
+    title: "Point-to-Point Antenna and Connectivity",
+    label: "Connectivity",
+    image: "https://images.pexels.com/photos/8827093/pexels-photo-8827093.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "Point-to-point planning, antenna alignment coordination, branch/site connectivity, troubleshooting, and handoff for business internet or site links.",
+    items: ["PTP survey", "Wireless links", "Router setup", "Field coordination"],
+  },
+  {
+    title: "VPN and Secure Remote Access",
+    label: "Network access",
+    image: "https://images.pexels.com/photos/2070069/pexels-photo-2070069.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop",
+    summary:
+      "VPN planning and support for secure access between users, offices, servers, and applications, with documentation for support and future changes.",
+    items: ["Site-to-site VPN", "Remote users", "Firewall policy", "Access documentation"],
+  },
+] as const;
+
+export const projectUploadFolders = [
+  {
+    project: "Damla Training enrollment system",
+    folder: "/public/project-uploads/damla-training-enrollment-system/",
+    filenames: "1.png, live-site.png",
+  },
+  {
+    project: "DreamTripClub booking system",
+    folder: "/public/project-uploads/dreamtripclub-booking-system/",
+    filenames: "1.png, live-site.png",
+  },
+  {
+    project: "Mosses and Vanesa RSVP dashboard",
+    folder: "/public/project-uploads/mosses-and-vanesa-rsvp-dashboard/",
+    filenames: "1.png, 2.png, 3.png",
+  },
+  {
+    project: "Dental clinic system",
+    folder: "/public/project-uploads/dental-clinic-system/",
+    filenames: "1.png, 2..png, 3..png, 4..png",
+  },
+  {
+    project: "Chauffeur mobile booking app",
+    folder: "/public/project-uploads/chauffeur-mobile-booking-app/",
+    filenames: "1.png, 2.png, 3.png",
+  },
+] as const;
 
 export const workWithMe = [
   "IT leadership",

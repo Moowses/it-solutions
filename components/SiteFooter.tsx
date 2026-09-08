@@ -16,7 +16,7 @@ export function SiteFooter() {
         </div>
         <nav className="footer-links footer-nav" aria-label="Footer navigation">
           <Link href="/#services">Services</Link>
-          <Link href="/work">Work</Link>
+          <Link href="/portfolio">Portfolio</Link>
           <Link href="/about">About</Link>
           <Link href="/#contact">Contact</Link>
         </nav>

@@ -36,6 +36,22 @@ yarn-error.log*
 # vercel
 .vercel
 
+# portfolio assets
+# Public pages use optimized WebP files; raw PNG screenshots often include private dashboard data.
+public/project-shots/*.png
+public/project-shots/damla-training-enrollment-system.webp
+public/project-shots/dental-clinic-system.webp
+public/project-shots/development-page-qa.webp
+public/project-shots/mosses-and-vanesa-rsvp-dashboard.webp
+public/project-uploads/**/*.png
+public/project-uploads/damla-training-enrollment-system/1.webp
+public/project-uploads/dental-clinic-system/1.webp
+public/project-uploads/dental-clinic-system/4..webp
+public/project-uploads/mosses-and-vanesa-rsvp-dashboard/1.webp
+public/project-uploads/mosses-and-vanesa-rsvp-dashboard/2.webp
+public/project-uploads/mosses-and-vanesa-rsvp-dashboard/3.webp
+public/project-uploads/mosses-and-vanesa-rsvp-dashboard/ONLINE INITATION.webp
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

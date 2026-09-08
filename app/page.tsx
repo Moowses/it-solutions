@@ -50,34 +50,36 @@ export default function HomePage() {
           <div className="container hero-grid">
             <div className="hero-copy">
               <p className="intro-line">IT Business Solutions - {location}</p>
-              <h1>Practical IT business solutions for growing teams and daily operations.</h1>
+              <h1>IT business solutions that help websites, systems, and operations work together.</h1>
               <p className="hero-text">
-                I help businesses plan, support, and improve the technology behind their operations, from managed IT
-                and user support to business systems, infrastructure, cloud tools, integrations, and workflow
-                automation.
+                I help businesses plan, build, support, and improve the technology behind daily operations: managed IT,
+                servers, networks, secure access, business websites, web apps, integrations, and automation.
               </p>
               <p className="availability">
-                I can support operations, coordinate vendors, document systems, and build improvements across remote
-                and onsite environments.
+                One technical partner for implementation, troubleshooting, documentation, vendor coordination, and
+                practical improvements after launch.
               </p>
               <div className="button-row">
                 <a className="button primary-button" href={projectInquiryHref}>
-                  Request IT Support
+                  Discuss an IT Solution
                 </a>
                 <a className="button secondary-button" href="#services">
                   Explore Services
+                </a>
+                <a className="button secondary-button" href="/portfolio">
+                  View Portfolio
                 </a>
               </div>
             </div>
 
             <aside className="home-service-panel" aria-label="Business IT solution coverage">
-              <h2>What the business gets</h2>
+              <h2>What I help you solve</h2>
               <ul>
-                <li>Managed support for daily IT operations</li>
-                <li>Reliable setup for users, devices, accounts, and access</li>
-                <li>Infrastructure support for offices, branches, and remote teams</li>
-                <li>Business systems that connect tools, workflows, and reporting</li>
-                <li>Clear documentation, vendor coordination, and ongoing improvements</li>
+                <li>Managed support for daily IT operations and smart-hands work</li>
+                <li>Websites and web apps for bookings, leads, customers, and admin teams</li>
+                <li>Servers, networks, VPN, CCTV, and site infrastructure support</li>
+                <li>Automations and integrations that reduce repetitive checking</li>
+                <li>Documentation, vendor coordination, and practical post-launch support</li>
               </ul>
             </aside>
           </div>
@@ -86,7 +88,7 @@ export default function HomePage() {
         <section className="section-block" id="services">
           <div className="container">
             <div className="section-header">
-              <h2>Service areas behind the business solution.</h2>
+              <h2>IT business solutions by service area.</h2>
               <p>
                 Each engagement can focus on one area or combine several: managed support, infrastructure, site
                 technology, software, systems integration, automation, cloud deployment, and documentation.
@@ -112,10 +114,10 @@ export default function HomePage() {
         <section className="section-block dark-section" id="work">
           <div className="container">
             <div className="section-header">
-              <h2>Work highlights.</h2>
+              <h2>Delivery highlights.</h2>
               <p>
-                A compact view of experience-backed project areas. Full case-study notes are kept on the Work page,
-                with screenshots and client names added only when they can be shared publicly.
+                A compact view of experience-backed project areas: operations support, infrastructure, business
+                systems, and public portfolio projects that can be shown professionally.
               </p>
             </div>
 
@@ -128,7 +130,9 @@ export default function HomePage() {
                   <p>{work.label}</p>
                   <h3>{work.title}</h3>
                   <span>{work.summary}</span>
-                  <a href={`/work#${work.slug}`}>View case study</a>
+                  <a href={work.slug === "web-applications" ? "/portfolio" : `/work#${work.slug}`}>
+                    {work.slug === "web-applications" ? "View portfolio" : "View case study"}
+                  </a>
                 </article>
               ))}
             </div>
@@ -164,7 +168,7 @@ export default function HomePage() {
             </p>
             <div className="button-row">
               <a className="button primary-button" href={projectInquiryHref}>
-                Request IT Support
+                Discuss an IT Solution
               </a>
               <a className="button secondary-button" href="/about">
                 View Experience
