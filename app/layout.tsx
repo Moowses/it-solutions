@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ScrollMotion } from "@/components/ScrollMotion";
 import { contactEmail, linkedInUrl, location, ownerName, siteUrl } from "@/lib/portfolio";
 import "./globals.css";
 
@@ -148,6 +149,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <ScrollMotion />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

@@ -1,4 +1,5 @@
 import { SiteFooter } from "@/components/SiteFooter";
+import Image from "next/image";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   location,
@@ -50,21 +51,17 @@ export default function HomePage() {
           <div className="container hero-grid">
             <div className="hero-copy">
               <p className="intro-line">IT Business Solutions - {location}</p>
-              <h1>IT business solutions that help websites, systems, and operations work together.</h1>
+              <h1>IT solutions.<br /><span>Built around your business.</span></h1>
               <p className="hero-text">
-                I help businesses plan, build, support, and improve the technology behind daily operations: managed IT,
-                servers, networks, secure access, business websites, web apps, integrations, and automation.
+                I’m Karl Mosses. I build websites and applications, connect business tools,
+                and support the IT your team relies on every day.
               </p>
               <p className="availability">
-                One technical partner for implementation, troubleshooting, documentation, vendor coordination, and
-                practical improvements after launch.
+                From the first plan to launch, handover, and ongoing support.
               </p>
               <div className="button-row">
                 <a className="button primary-button" href={projectInquiryHref}>
-                  Discuss an IT Solution
-                </a>
-                <a className="button secondary-button" href="#services">
-                  Explore Services
+                  Discuss Your Project
                 </a>
                 <a className="button secondary-button" href="/portfolio">
                   View Portfolio
@@ -72,26 +69,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            <aside className="home-service-panel" aria-label="Business IT solution coverage">
-              <h2>What I help you solve</h2>
-              <ul>
-                <li>Managed support for daily IT operations and smart-hands work</li>
-                <li>Websites and web apps for bookings, leads, customers, and admin teams</li>
-                <li>Servers, networks, VPN, CCTV, and site infrastructure support</li>
-                <li>Automations and integrations that reduce repetitive checking</li>
-                <li>Documentation, vendor coordination, and practical post-launch support</li>
-              </ul>
-            </aside>
+          </div>
+        </section>
+
+        <section className="project-proof section-block" aria-label="Project previews">
+          <div className="container">
+            <div className="section-header"><h2>From idea to everyday use.</h2><p>Booking, training, and customer workflows. Explore the applications and the work behind them.</p></div>
+            <div className="proof-grid">
+              <a className="proof-project" href="/portfolio#projects">
+                <div className="proof-image"><Image src="/project-uploads/dreamtripclub-booking-system/live-site.webp" alt="DreamTripClub travel booking website" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+                <div><h3>DreamTripClub</h3><span>Membership &amp; booking platform</span></div>
+              </a>
+              <a className="proof-project" href="/portfolio#projects">
+                <div className="proof-image"><Image src="/project-uploads/damla-training-enrollment-system/live-site.webp" alt="Damla Training course and enrollment website" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+                <div><h3>Damla Training</h3><span>Website &amp; enrollment system</span></div>
+              </a>
+            </div>
+            <nav className="service-shortcuts" aria-label="Explore service areas"><a href="/portfolio#projects">Websites &amp; applications <span aria-hidden="true">&#8599;</span></a><a href="/portfolio#automation">Business automation <span aria-hidden="true">&#8599;</span></a><a href="/portfolio#it-infrastructure">IT infrastructure &amp; support <span aria-hidden="true">&#8599;</span></a></nav>
           </div>
         </section>
 
         <section className="section-block" id="services">
           <div className="container">
             <div className="section-header">
-              <h2>IT business solutions by service area.</h2>
+              <h2>What does your business need next?</h2>
               <p>
-                Each engagement can focus on one area or combine several: managed support, infrastructure, site
-                technology, software, systems integration, automation, cloud deployment, and documentation.
+                A better website. Less manual admin. A reliable office network.
+                Start with the problem, and we can scope the right support.
               </p>
             </div>
 
@@ -114,10 +118,10 @@ export default function HomePage() {
         <section className="section-block dark-section" id="work">
           <div className="container">
             <div className="section-header">
-              <h2>Delivery highlights.</h2>
+              <h2>Experience beyond the screen.</h2>
               <p>
-                A compact view of experience-backed project areas: operations support, infrastructure, business
-                systems, and public portfolio projects that can be shown professionally.
+                My background in NOC engineering and IT management connects software delivery
+                with the practical demands of running a business.
               </p>
             </div>
 
@@ -161,10 +165,10 @@ export default function HomePage() {
 
         <section className="section-block cta-section" id="contact">
           <div className="container final-contact">
-            <h2>Need an IT business solution that supports operations, systems, or growth?</h2>
+            <h2>What would you like to improve?</h2>
             <p>
-              Tell me what is happening, who or where it affects, and what fixed should look like for the business. I
-              will respond with a clear path for scoping support, implementation, or project work.
+              Tell me about your business, the challenge, and your timeline.
+              We can work out the scope and a practical next step together.
             </p>
             <div className="button-row">
               <a className="button primary-button" href={projectInquiryHref}>
