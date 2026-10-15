@@ -1,159 +1,40 @@
 import type { Metadata } from "next";
 import { ScrollMotion } from "@/components/ScrollMotion";
-import { contactEmail, linkedInUrl, location, ownerName, siteUrl } from "@/lib/portfolio";
+import { ownerName, siteUrl } from "@/lib/portfolio";
 import "./globals.css";
+
+const title = "Karl Mosses | IT Leadership, Development & Business Solutions";
+const description = "Karl Mosses Banlasan is an IT Head, Developer, and IT Solutions Consultant in Davao City, Philippines. Reliable systems, purposeful software, and practical automation for your business.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: {
-    default: "Karl Mosses IT Solutions | Website, Web App & Managed IT Support",
-    template: "%s | Karl Mosses Banlasan",
-  },
-  description:
-    "IT business solutions from Davao City for managed support, website development, web apps, infrastructure, integrations, automation, and technology operations.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    url: siteUrl,
-    title: "Karl Mosses IT Solutions | Websites, systems, automation, and managed IT",
-    description:
-      "Website development, web apps, managed support, infrastructure, integrations, automation, and technology operations for growing teams.",
-    siteName: "Karl Mosses Banlasan",
-  },
-  twitter: {
-    card: "summary",
-    title: "Karl Mosses IT Solutions | Website, Web App & Managed IT Support",
-    description:
-      "IT business solutions for websites, web apps, managed support, infrastructure, integrations, automation, and technology operations from Davao City, Philippines.",
-  },
-  keywords: [
-    "Managed IT Services Davao",
-    "Smart Hands IT Support Philippines",
-    "Server Support Davao",
-    "IT Operations Support",
-    "IT Manager Davao City",
-    "Systems Administrator Philippines",
-    "NOC Engineer",
-    "IT Operations",
-    "Network Administrator",
-    "Business Systems Integration",
-    "Website Development Davao",
-    "Website Development Philippines",
-    "Web App Development Philippines",
-    "Next.js Developer Philippines",
-    "React Developer Philippines",
-    "WordPress Developer Philippines",
-    "WooCommerce Developer Philippines",
-    "Business Website Development",
-    "Booking System Development",
-    "Appointment Booking System",
-    "Online RSVP System",
-    "Digital Invitation Website",
-    "Wedding RSVP Website",
-    "Guest Management System",
-    "AI Chatbot Integration",
-    "OpenAI Chat Support",
-    "Gemini API Integration",
-    "API Integration",
-    "AI Automation",
-    "CCTV Installation Davao",
-    "Point to Point Internet Davao",
-    "PTP Connectivity",
-    "Business Web Applications",
-    "Microsoft 365 Administrator",
-    "Google Workspace Administrator",
-    "Full-Stack Developer",
-    "IT Consultant Davao",
-  ],
-  icons: { icon: "/favicon.ico" },
+  title: { default: title, template: "%s | Karl Mosses" },
+  description,
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", locale: "en_PH", url: siteUrl, title, description, siteName: "Karl Mosses" },
+  twitter: { card: "summary_large_image", title, description },
+  icons: { icon: "/icon.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: ownerName,
-      email: contactEmail,
-      url: siteUrl,
-      sameAs: [linkedInUrl],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Davao City",
-        addressCountry: "PH",
-      },
-      jobTitle: "IT Manager and Systems Specialist",
-      knowsAbout: [
-        "Managed IT Services",
-        "Smart Hands IT Support",
-        "Server Support",
-        "IT Operations",
-        "Systems Administration",
-        "NOC Operations",
-        "Network Engineering",
-        "Business Systems Integration",
-        "Website Development",
-        "Web Application Development",
-        "WordPress Development",
-        "WooCommerce Development",
-        "Booking System Development",
-        "Online RSVP System",
-        "Digital Invitation Automation",
-        "AI Chatbot Integration",
-        "API Integration",
-        "AI Automation",
-        "Full-Stack Development",
-      ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: `${ownerName} IT Systems and Automation Consulting`,
-      url: siteUrl,
-      email: contactEmail,
-      areaServed: location,
-      serviceType: [
-        "Managed IT Services",
-        "Smart Hands IT Support",
-        "Server and IT Operations Support",
-        "IT Operations",
-        "Systems Administration",
-        "Network and NOC Operations",
-        "Business Systems Integration",
-        "Website Development",
-        "Web Application Development",
-        "WordPress Development",
-        "WooCommerce Development",
-        "Booking System Development",
-        "Online RSVP System",
-        "Digital Invitation Automation",
-        "AI Chatbot Integration",
-        "API Integration",
-        "AI Automation",
-        "Web Applications",
-        "Technical Consulting",
-      ],
-    },
-  ];
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  // Only identity, role and location confirmed in the brief. No invented company or credentials.
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: ownerName,
+    alternateName: "Karl Mosses",
+    url: siteUrl,
+    jobTitle: ["IT Head", "Developer", "IT Solutions Consultant"],
+    address: { "@type": "PostalAddress", addressLocality: "Davao City", addressCountry: "PH" },
+  };
 
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">
-          Skip to main content
-        </a>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
         <ScrollMotion />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       </body>
     </html>
   );

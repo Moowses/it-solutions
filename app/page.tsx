@@ -1,184 +1,81 @@
-import { SiteFooter } from "@/components/SiteFooter";
 import Image from "next/image";
+import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
-import {
-  location,
-  projectInquiryHref,
-  services,
-  workHighlights,
-} from "@/lib/portfolio";
-
-type WorkIconName = "business-systems" | "network-operations" | "site-infrastructure" | "web-applications";
-
-function WorkIcon({ name }: { name: WorkIconName }) {
-  if (name === "network-operations") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M6 17h12M12 7v10M5 7h14v6H5z" />
-      </svg>
-    );
-  }
-
-  if (name === "site-infrastructure") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M5 8h10v8H5zM15 10l4-2v8l-4-2M8 19h8" />
-      </svg>
-    );
-  }
-
-  if (name === "web-applications") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M4 6h16v12H4zM8 10l-2 2 2 2M16 10l2 2-2 2M10 15l4-6" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M5 7h14M5 12h14M5 17h14M8 5v14M16 5v14" />
-    </svg>
-  );
-}
+import { SiteFooter } from "@/components/SiteFooter";
+import { FeaturedProjects } from "@/components/FeaturedProjects";
+import { ContactForm } from "@/components/ContactForm";
+import { sampleProjects } from "@/lib/case-studies";
+import { contactEmail, linkedInUrl, location, services } from "@/lib/portfolio";
+import { engagementSteps } from "@/lib/site-content";
 
 export default function HomePage() {
+  const contactConfigured = Boolean(process.env.RESEND_API_KEY?.trim() && process.env.CONTACT_FROM_EMAIL?.trim() && process.env.CONTACT_TO_EMAIL?.trim());
+
   return (
     <>
       <SiteHeader />
-      <main id="main-content">
-        <section className="hero-section">
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <p className="intro-line">IT Business Solutions - {location}</p>
-              <h1>IT solutions.<br /><span>Built around your business.</span></h1>
-              <p className="hero-text">
-                I’m Karl Mosses. I build websites and applications, connect business tools,
-                and support the IT your team relies on every day.
-              </p>
-              <p className="availability">
-                From the first plan to launch, handover, and ongoing support.
-              </p>
-              <div className="button-row">
-                <a className="button primary-button" href={projectInquiryHref}>
-                  Discuss Your Project
-                </a>
-                <a className="button secondary-button" href="/portfolio">
-                  View Portfolio
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="project-proof section-block" aria-label="Project previews">
-          <div className="container">
-            <div className="section-header"><h2>From idea to everyday use.</h2><p>Booking, training, and customer workflows. Explore the applications and the work behind them.</p></div>
-            <div className="proof-grid">
-              <a className="proof-project" href="/portfolio#projects">
-                <div className="proof-image"><Image src="/project-uploads/dreamtripclub-booking-system/live-site.webp" alt="DreamTripClub travel booking website" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
-                <div><h3>DreamTripClub</h3><span>Membership &amp; booking platform</span></div>
-              </a>
-              <a className="proof-project" href="/portfolio#projects">
-                <div className="proof-image"><Image src="/project-uploads/damla-training-enrollment-system/live-site.webp" alt="Damla Training course and enrollment website" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
-                <div><h3>Damla Training</h3><span>Website &amp; enrollment system</span></div>
-              </a>
-            </div>
-            <nav className="service-shortcuts" aria-label="Explore service areas"><a href="/portfolio#projects">Websites &amp; applications <span aria-hidden="true">&#8599;</span></a><a href="/portfolio#automation">Business automation <span aria-hidden="true">&#8599;</span></a><a href="/portfolio#it-infrastructure">IT infrastructure &amp; support <span aria-hidden="true">&#8599;</span></a></nav>
-          </div>
-        </section>
-
-        <section className="section-block" id="services">
-          <div className="container">
-            <div className="section-header">
-              <h2>What does your business need next?</h2>
-              <p>
-                A better website. Less manual admin. A reliable office network.
-                Start with the problem, and we can scope the right support.
-              </p>
-            </div>
-
-            <div className="services-grid">
-              {services.map((service) => (
-                <article className="service-card" key={service.title}>
-                  <h3>{service.title}</h3>
-                  <p>{service.result}</p>
-                  <ul>
-                    {service.capabilities.map((capability) => (
-                      <li key={capability}>{capability}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-block dark-section" id="work">
-          <div className="container">
-            <div className="section-header">
-              <h2>Experience beyond the screen.</h2>
-              <p>
-                My background in NOC engineering and IT management connects software delivery
-                with the practical demands of running a business.
-              </p>
-            </div>
-
-            <div className="work-grid">
-              {workHighlights.map((work) => (
-                <article className="work-teaser-card" key={work.title}>
-                  <div className="work-icon">
-                    <WorkIcon name={work.slug as WorkIconName} />
-                  </div>
-                  <p>{work.label}</p>
-                  <h3>{work.title}</h3>
-                  <span>{work.summary}</span>
-                  <a href={work.slug === "web-applications" ? "/portfolio" : `/work#${work.slug}`}>
-                    {work.slug === "web-applications" ? "View portfolio" : "View case study"}
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="container two-column">
-            <div className="section-header compact-header">
-              <h2>How I approach IT projects.</h2>
-              <p>
-                I start by understanding the business process, the users, the current tools, the site conditions, and
-                the failure points. Then I decide whether the right solution should be supported, configured,
-                integrated, automated, secured, or built.
-              </p>
-            </div>
-            <ol className="process-steps">
-              <li>Assess the workflow, site, users, servers, systems, risks, and dependencies.</li>
-              <li>Plan the support model with requirements, cost, security, and maintainability in mind.</li>
-              <li>Build or configure the system, network, automation, app, or infrastructure.</li>
-              <li>Test connectivity, permissions, data flow, backups, access, and user handoff.</li>
-              <li>Document the setup so the business can operate, support, and improve it properly.</li>
-            </ol>
-          </div>
-        </section>
-
-        <section className="section-block cta-section" id="contact">
-          <div className="container final-contact">
-            <h2>What would you like to improve?</h2>
-            <p>
-              Tell me about your business, the challenge, and your timeline.
-              We can work out the scope and a practical next step together.
-            </p>
+      <main id="main-content" className="home-page simple-home">
+        <section className="editorial-hero container" aria-labelledby="hero-heading">
+          <div className="editorial-hero-copy">
+            <p className="hero-identity">Karl Mosses Banlasan <span>IT Head, Developer &amp; IT Solutions Consultant</span></p>
+            <h1 id="hero-heading">Technology that works for your business.</h1>
+            <p className="editorial-intro">Practical IT leadership, custom software, and automation to help your business work better.</p>
             <div className="button-row">
-              <a className="button primary-button" href={projectInquiryHref}>
-                Discuss an IT Solution
-              </a>
-              <a className="button secondary-button" href="/about">
-                View Experience
-              </a>
+              <Link className="button primary-button" href="#contact">Discuss Your Project <span aria-hidden="true">↗</span></Link>
+              <Link className="text-link" href="#work">Explore My Work <span aria-hidden="true">↓</span></Link>
             </div>
           </div>
+          <figure className="profile-portrait">
+            <div className="portrait-frame">
+              <Image src="/images/karl-mosses-portrait.webp" alt="Karl Mosses Banlasan in a dark suit in a modern office" fill preload sizes="(max-width: 767px) 90vw, (max-width: 1080px) 40vw, 420px" />
+            </div>
+            <figcaption>Karl Mosses Banlasan</figcaption>
+          </figure>
+        </section>
+
+        <section className="section-block selected-work-section" id="work">
+          <div className="container">
+            <div className="editorial-heading"><h2>Selected work.</h2><p>Applications and websites built around everyday needs.</p></div>
+            <FeaturedProjects />
+            <div className="work-index-link"><Link className="text-link" href="/portfolio">View all projects <span aria-hidden="true">↗</span></Link></div>
+            <details className="sample-approaches">
+              <summary>Explore sample project approaches</summary>
+              <p>Hypothetical examples, with no client work or verified results claimed.</p>
+              <div className="sample-project-list">
+                {sampleProjects.map((project) => (
+                  <Link className="sample-project-link" key={project.slug} href={`/work/${project.slug}`}>
+                    <div><span className="sample-label">Sample case study</span><h3>{project.title}</h3></div><span className="project-link-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                ))}
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section className="section-block container home-services" id="services">
+          <div className="editorial-heading"><h2>How I can help.</h2></div>
+          <div className="service-editorial-grid">
+            {services.map((service) => (
+              <article className="service-editorial" key={service.title}>
+                <h3>{service.title}</h3><p>{service.result}</p>
+                <details className="service-disclosure"><summary aria-label={`View capabilities for ${service.title}`}>View capabilities</summary><ul>{service.capabilities.map((item) => <li key={item}>{item}</li>)}</ul></details>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section-block container personal-section" id="about">
+          <div className="personal-title"><h2>A business perspective.<br />A builder’s mindset.</h2></div>
+          <div className="personal-copy"><p>I’m Karl. I combine IT leadership with hands-on development, systems administration, and automation.</p><p>I start with your business, communicate clearly, and build solutions your team can maintain.</p><Link className="text-link" href="/about">More about me <span aria-hidden="true">↗</span></Link></div>
+        </section>
+
+        <section className="section-block process-section" id="process">
+          <div className="container"><div className="editorial-heading"><h2>A clear way forward.</h2></div><ol className="engagement-process">{engagementSteps.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol></div>
+        </section>
+
+        <section className="section-block container contact-section" id="contact">
+          <div className="contact-copy"><h2>Let’s talk about your project.</h2><p>Tell me what you want to build, improve, or connect.</p><dl className="contact-details"><div><dt>Location</dt><dd>{location}<br />Available for remote collaboration</dd></div><div><dt>Email</dt><dd><a href={`mailto:${contactEmail}`}>{contactEmail}</a></dd></div><div><dt>Connect</dt><dd><a href={linkedInUrl} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></dd></div></dl></div>
+          <ContactForm configured={contactConfigured} />
         </section>
       </main>
       <SiteFooter />

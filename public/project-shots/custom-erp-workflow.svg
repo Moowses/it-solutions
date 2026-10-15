@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Custom ERP business workflow overview</title>
+  <desc id="desc">An illustrative workflow from request to approval to fulfillment, connecting purchasing, inventory, branch orders, asset tracking and reports. This is a diagram, not an application screenshot.</desc>
+  <rect width="1440" height="900" fill="#eeede5"/>
+  <text x="96" y="112" font-family="Arial,sans-serif" font-size="22" fill="#4f6243">ILLUSTRATIVE WORKFLOW OVERVIEW</text>
+  <text x="96" y="232" font-family="Georgia,serif" font-size="76" fill="#292b25">Built around your process.</text>
+  <text x="96" y="293" font-family="Arial,sans-serif" font-size="27" fill="#50534a">One connected flow. Clear ownership at every step.</text>
+  <g fill="#fcfbf7" stroke="#bfc2b3" stroke-width="2">
+    <rect x="96" y="398" width="344" height="176" rx="4"/>
+    <rect x="548" y="398" width="344" height="176" rx="4"/>
+    <rect x="1000" y="398" width="344" height="176" rx="4"/>
+  </g>
+  <g font-family="Georgia,serif" font-size="44" fill="#292b25" text-anchor="middle">
+    <text x="268" y="476">Request</text><text x="720" y="476">Approve</text><text x="1172" y="476">Fulfill</text>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="21" fill="#62665b" text-anchor="middle">
+    <text x="268" y="524">Capture the business need</text><text x="720" y="524">Review and assign ownership</text><text x="1172" y="524">Complete and track the work</text>
+  </g>
+  <g fill="none" stroke="#4f6243" stroke-width="3">
+    <path d="M460 486h68m-14-12 14 12-14 12M912 486h68m-14-12 14 12-14 12"/>
+  </g>
+  <path d="M96 666h1248" stroke="#bfc2b3" stroke-width="2"/>
+  <g font-family="Arial,sans-serif" font-size="22" fill="#50534a">
+    <text x="96" y="726">Purchasing</text><text x="356" y="726">Inventory</text><text x="596" y="726">Branch orders</text><text x="884" y="726">Asset tracking</text><text x="1180" y="726">Reports</text>
+  </g>
+  <text x="96" y="822" font-family="Arial,sans-serif" font-size="19" fill="#62665b">A project overview. No company records or operational figures are shown.</text>
+</svg>

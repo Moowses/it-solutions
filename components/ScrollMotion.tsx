@@ -14,15 +14,14 @@ export function ScrollMotion() {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
         const element = entry.target as HTMLElement;
-        const sideways = element.matches(".section-header, .intro-line");
         animations.push(element.animate([
-          { opacity: 0, transform: sideways ? "translateX(-20px)" : "translateY(24px)" },
+          { opacity: 0.7, transform: "translateY(12px)" },
           { opacity: 1, transform: "translate(0)" },
-        ], { duration: 600, easing: "cubic-bezier(.2,.7,.2,1)" }));
+        ], { duration: 360, easing: "cubic-bezier(.2,.7,.2,1)" }));
         observer.unobserve(element);
       }
     }, { threshold: 0.08 });
-    document.querySelectorAll("main .section-header, main article, main .hero-copy > *, main .text-panel > p, main .process-steps > li, main .proof-project, main .development-hero h1, main .about-hero h1").forEach((element) => observer.observe(element));
+    document.querySelectorAll("main .section-header, main article, main .editorial-heading, main .personal-title, main .contact-copy, main .engagement-process > li, main .text-panel > p").forEach((element) => observer.observe(element));
     const stop = () => {
       if (preference.matches) { observer.disconnect(); animations.forEach((animation) => animation.cancel()); }
     };

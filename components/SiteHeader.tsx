@@ -2,30 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { navItems } from "@/lib/portfolio";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [isCompact, setIsCompact] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const updateHeader = () => setIsCompact(window.scrollY > 24);
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-    return () => window.removeEventListener("scroll", updateHeader);
-  }, []);
+  const menuRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className={`site-header${isCompact ? " is-compact" : ""}`}>
+    <header className="site-header" onKeyDown={(event) => {
+      if (event.key === "Escape" && isOpen) { setIsOpen(false); menuRef.current?.focus(); }
+    }}>
       <div className="container nav-inner">
         <Link href="/" className="brand" onClick={() => setIsOpen(false)}>
-          <span>Karl Mosses IT Solutions</span>
+          <span>Karl Mosses<span className="brand-description">IT Leadership &amp; Business Solutions</span></span>
         </Link>
 
         <button
           type="button"
+          ref={menuRef}
           className="menu-toggle"
           aria-expanded={isOpen}
           aria-controls="primary-navigation"

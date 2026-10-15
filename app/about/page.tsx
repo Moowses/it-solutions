@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   certificationItems,
+  currentRole,
   educationItems,
   expertiseGroups,
   freelanceWork,
-  location,
   ownerName,
   resumeHref,
   resumeRequestHref,
@@ -15,8 +16,9 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
+  openGraph: { title: "About Karl Mosses", url: "/about", images: ["/opengraph-image"] },
   description:
-    "About Karl Mosses Banlasan: IT leadership, systems administration, NOC operations, full-stack development, infrastructure, automation, and technical training.",
+    "Karl Mosses Banlasan, IT Head at RSB Jathnier in Davao City, connecting business needs with practical digital transformation, development, and IT solutions.",
   alternates: {
     canonical: "/about",
   },
@@ -25,53 +27,93 @@ export const metadata: Metadata = {
 const resumeLabel = resumeHref ? "Download Resume" : "Request Resume";
 const resumeLink = resumeHref ?? resumeRequestHref;
 
-const profileFacts = [
-  "Current IT Manager for a remote business operation",
-  "Former NOC Engineer and Network Support Engineer",
-  "Experience across systems, networks, cloud, web apps, and automation",
-];
-
-const leadershipItems = [
-  "Understand the business process before proposing technology",
-  "Listen to stakeholders and users",
-  "Identify operational inefficiencies",
-  "Compare solutions based on cost, risk, scalability, and maintainability",
-  "Coordinate teams and vendors",
-  "Track implementation through clear tasks, priorities, documentation, and updates",
-  "Support users through technical change",
-];
-
 export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main id="main-content">
+      <main id="main-content" className="about-page">
         <section className="about-hero">
           <div className="container about-grid">
             <div>
-              <p className="intro-line">{ownerName} - {location}</p>
-              <h1>I connect technology, people, and business operations.</h1>
+              <p className="intro-line">About Karl Mosses</p>
+              <h1>Technology, with your business in mind.</h1>
+              <p>
+                I&apos;m {ownerName}, {currentRole.title} at {currentRole.company} in Davao City.
+                I focus on practical digital transformation: connecting systems, improving workflows,
+                and helping teams work better.
+              </p>
+              <p className="intro-line">{currentRole.focus} · Development · IT Solutions</p>
+              <a
+                className="button primary-button"
+                href={resumeLink}
+                download={resumeHref ? "Karl Mosses Banlasan Resume.pdf" : undefined}
+              >
+                {resumeLabel} <span aria-hidden="true">↗</span>
+              </a>
             </div>
-            <p>
-              My background spans IT leadership, systems administration, NOC operations, full-stack development,
-              infrastructure, and automation. This allows me to approach technical problems from both the operational
-              and business perspective.
-            </p>
+            <figure className="about-portrait">
+              <Image
+                src="/images/karl-mosses-portrait.webp"
+                alt="Karl Mosses Banlasan"
+                width={960}
+                height={1200}
+                sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 40vw, 440px"
+                preload
+              />
+            </figure>
           </div>
         </section>
 
         <section className="section-block">
-          <div className="container two-column">
+          <div className="container">
             <div className="section-header compact-header">
-              <h2>Professional story.</h2>
-              <p>A career shaped by network operations, development, and IT leadership.</p>
-              <ul className="profile-facts">
-                {profileFacts.map((fact) => (
-                  <li key={fact}>{fact}</li>
-                ))}
-              </ul>
+              <p className="intro-line">My approach</p>
+              <h2>Understand the business. Make the technology useful.</h2>
+              <p>
+                I start by listening to the people doing the work. Then I plan a practical solution,
+                communicate clearly, and build something the team can maintain long after launch.
+              </p>
             </div>
-            <div className="text-panel">
+            <ul className="approach-list">
+              <li>Clear priorities and honest communication.</li>
+              <li>Reliable delivery, documentation, and handover.</li>
+              <li>Maintainable systems with lasting operational value.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="section-block muted-section" aria-labelledby="experience-heading">
+          <div className="container">
+            <div className="section-header">
+              <p className="intro-line">Experience</p>
+              <h2 id="experience-heading">From technical support to IT leadership.</h2>
+            </div>
+            <div className="timeline">
+              {timelineItems.map((item) => (
+                <article className="timeline-item" key={item.title}>
+                  <p>{item.period}</p>
+                  <h3>{item.title}</h3>
+                </article>
+              ))}
+            </div>
+            <article className="freelance-card">
+              <p>{freelanceWork.period}</p>
+              <h3>{freelanceWork.title}</h3>
+              <span>{freelanceWork.summary}</span>
+            </article>
+          </div>
+        </section>
+
+        <section className="section-block" aria-labelledby="background-heading">
+          <div className="container">
+            <div className="section-header compact-header">
+              <p className="intro-line">A little more background</p>
+              <h2 id="background-heading">The experience behind the work.</h2>
+              <p>Explore my story, technical experience, and credentials.</p>
+            </div>
+            <details className="about-disclosure">
+              <summary>Professional story</summary>
+              <div className="text-panel">
               <p>
                 My range of skills comes from working where technology meets day-to-day operations.
                 At ViewQwest, I progressed from Network Support Engineer to NOC Engineer, troubleshooting
@@ -105,40 +147,19 @@ export default function AboutPage() {
                 Institute of Technology, Inc., helping learners turn technical concepts into practical
                 troubleshooting and support skills.
               </p>
-              <a
-                className="button primary-button"
-                href={resumeLink}
-                download={resumeHref ? "Karl Mosses Banlasan Resume.pdf" : undefined}
-              >
-                {resumeLabel}
-              </a>
-            </div>
-          </div>
-        </section>
+              </div>
+              <div className="expertise-grid">
+                {timelineItems.map((item) => (
+                  <article className="expertise-card" key={item.title}>
+                    <h3>{item.title}</h3>
+                    <p>{item.summary}</p>
+                  </article>
+                ))}
+              </div>
+            </details>
 
-        <section className="section-block muted-section">
-          <div className="container">
-            <div className="section-header">
-              <h2>Leadership approach.</h2>
-              <p>
-                My management style starts with the operation itself: what people are trying to do, where handoffs
-                break, what risk exists, and what a maintainable system should look like after launch.
-              </p>
-            </div>
-            <ul className="approach-list">
-              {leadershipItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="container">
-            <div className="section-header">
-              <h2>Expertise matrix.</h2>
-              <p>The tools and platforms I work with, grouped by area.</p>
-            </div>
+            <details className="about-disclosure">
+              <summary>Technical expertise</summary>
             <div className="expertise-grid">
               {expertiseGroups.map((group) => (
                 <article className="expertise-card" key={group.title}>
@@ -151,40 +172,10 @@ export default function AboutPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+            </details>
 
-        <section className="section-block dark-section">
-          <div className="container">
-            <div className="section-header">
-              <h2>Career timeline.</h2>
-              <p>
-                My progression through technical support, development, IT management, and training.
-              </p>
-            </div>
-            <div className="timeline">
-              {timelineItems.map((item) => (
-                <article className="timeline-item" key={item.title}>
-                  <p>{item.period}</p>
-                  <h3>{item.title}</h3>
-                  <span>{item.summary}</span>
-                </article>
-              ))}
-            </div>
-            <article className="freelance-card">
-              <p>{freelanceWork.period}</p>
-              <h3>{freelanceWork.title}</h3>
-              <span>{freelanceWork.summary}</span>
-            </article>
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="container two-column">
-            <div className="section-header compact-header">
-              <h2>Licenses and certifications.</h2>
-              <p>Network security, cloud security, technical support, and training credentials.</p>
-            </div>
+            <details className="about-disclosure">
+              <summary>Licenses & certifications</summary>
             <div className="certification-grid">
               {certificationItems.map((credential) => (
                 <article className="credential-card" key={`${credential.issuer}-${credential.title}`}>
@@ -195,20 +186,15 @@ export default function AboutPage() {
                     <p className="credential-issuer">{credential.issuer}</p>
                     <h3>{credential.title}</h3>
                     <p className="credential-meta">{credential.date}</p>
-                    <p className="credential-id">Credential ID {credential.credentialId}</p>
+                    {credential.credentialId !== "Professional credential" ? <p className="credential-id">Credential ID {credential.credentialId}</p> : null}
                   </div>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+            </details>
 
-        <section className="section-block muted-section">
-          <div className="container two-column">
-            <div className="section-header compact-header">
-              <h2>Education.</h2>
-              <p>Formal study across IT, computer science, and business/accounting foundations.</p>
-            </div>
+            <details className="about-disclosure">
+              <summary>Education</summary>
             <div className="education-list">
               {educationItems.map((item) => (
                 <article className="education-card" key={`${item.school}-${item.degree}`}>
@@ -224,6 +210,7 @@ export default function AboutPage() {
                 </article>
               ))}
             </div>
+            </details>
           </div>
         </section>
       </main>

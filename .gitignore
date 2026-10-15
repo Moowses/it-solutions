@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# Private source media and unrelated uploads must never enter the public bundle.
+/private-assets/
 
 # vercel
 .vercel

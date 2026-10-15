@@ -5,6 +5,7 @@ import { projectInquiryHref, workHighlights } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
   title: "Work",
+  openGraph: { title: "Work | Karl Mosses", url: "/work", images: ["/opengraph-image"] },
   description:
     "Work highlights for Karl Mosses Banlasan: business systems, network operations, site infrastructure, and web applications.",
   alternates: {

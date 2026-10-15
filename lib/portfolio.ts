@@ -1,12 +1,13 @@
 export const siteUrl = "https://karlmosses.com";
 export const ownerName = "Karl Mosses Banlasan";
+export const currentRole = { title: "IT Head", company: "RSB Jathnier", focus: "Digital Transformation" } as const;
 export const location = "Davao City, Philippines";
 export const contactEmail = "info@karlmosses.com";
 export const linkedInUrl = "https://www.linkedin.com/in/karl-mosses-banlasan-21aab8205/";
 export const resumeHref = "/resume.pdf";
 
 export const resumeRequestHref = `mailto:${contactEmail}?subject=Resume%20Request%20-%20Karl%20Mosses%20Banlasan`;
-export const projectInquiryHref = `mailto:${contactEmail}?subject=IT%20Business%20Solutions%20Inquiry`;
+export const projectInquiryHref = "/#contact";
 
 export const navItems = [
   { label: "Home", href: "/" },
@@ -18,75 +19,24 @@ export const navItems = [
 
 export const services = [
   {
-    title: "Managed IT Services and Smart Hands",
-    result:
-      "Remote and onsite IT support for businesses that need a hands-on technical partner to keep users, devices, sites, and vendors moving.",
-    capabilities: [
-      "Smart hands support for offices, branches, and field sites",
-      "User support, workstation setup, troubleshooting, and technical handoff",
-      "Printer, router, Wi-Fi, endpoint, and onsite equipment support",
-      "Vendor, carrier, and field technician coordination",
-      "Incident triage, escalation, documentation, and follow-through",
-    ],
+    title: "IT Leadership & Project Delivery",
+    result: "A clear plan for technology that supports your business priorities, with someone to guide the work through delivery.",
+    capabilities: ["IT planning and operational improvements", "Project planning and implementation", "Vendor and stakeholder coordination", "Team guidance and technical documentation"],
   },
   {
-    title: "Server and IT Operations Support",
-    result:
-      "Administration and operational support for the core systems behind users, access, identity, files, backups, and daily IT service continuity.",
-    capabilities: [
-      "Microsoft 365 and Google Workspace",
-      "Windows Server and Active Directory",
-      "User provisioning and access controls",
-      "Endpoint monitoring, security, backup, and disaster-recovery readiness",
-      "IT policies, documentation, budgeting, vendors, and asset management",
-    ],
+    title: "Web & Business Application Development",
+    result: "Websites and applications shaped around your customers, your team, and the way your operation works.",
+    capabilities: ["Professional websites", "Internal portals and dashboards", "HR, operations, and workflow applications", "API and system integrations"],
   },
   {
-    title: "Network, VPN and PTP Connectivity",
-    result:
-      "Network planning, troubleshooting, secure remote access, and point-to-point connectivity for offices, sites, and operations teams.",
-    capabilities: [
-      "Point-to-point internet deployment",
-      "TCP/IP, VLAN, routing, switching, DNS, DHCP, and VPN",
-      "Fortinet, Palo Alto, pfSense, UniFi, and EdgeRouter",
-      "EVPL, IEPL, Metro Ethernet, and business connectivity",
-      "Carrier, vendor, and field technician coordination",
-    ],
+    title: "Infrastructure & IT Operations",
+    result: "Dependable foundations for the people and systems your business relies on every day.",
+    capabilities: ["Network and server implementation", "Firewall, VPN, and connectivity", "Microsoft and Google Workspace administration", "Backup planning and ongoing technical support"],
   },
   {
-    title: "CCTV, DVR/NVR and Site Infrastructure",
-    result:
-      "Field-ready security and site technology work from planning and installation through testing, turnover, and user orientation.",
-    capabilities: [
-      "CCTV site surveys and camera layout planning",
-      "Cable routing, DVR/NVR setup, and remote viewing",
-      "Router, wireless, printer, and onsite equipment support",
-      "Testing, documentation, and technical turnover",
-    ],
-  },
-  {
-    title: "Software, Web and Business Applications",
-    result:
-      "Custom business systems, websites, portals, booking tools, dashboards, and internal applications built around the way the operation works.",
-    capabilities: [
-      "Next.js, React, Node.js, TypeScript, and Express",
-      "Booking systems, dashboards, portals, and internal tools",
-      "WordPress and WooCommerce",
-      "Firebase, Supabase, DigitalOcean, Vercel, Nginx, PM2, and Cloudflare",
-    ],
-  },
-  {
-    title: "Business Systems Integration and Automation",
-    result:
-      "Connects CRM, POS, accounting, booking, e-commerce, payment, communication, and internal platforms so information moves cleanly with less manual work.",
-    capabilities: [
-      "CRM, K-Series POS, QuickBooks, Stripe, NMI, booking, and e-commerce platforms",
-      "REST APIs, webhooks, JSON, and middleware",
-      "Cross-platform synchronization and data-integrity workflows",
-      "Business-process analysis and systems planning",
-      "n8n, Zapier, Make, GoHighLevel, HubSpot, and ClickFunnels",
-      "Lead routing, email, SMS, CRM, and operational workflows",
-    ],
+    title: "Automation & AI Integration",
+    result: "Fewer repetitive tasks and better connections between the tools you already use.",
+    capabilities: ["Workflow automation", "n8n, Make, and Zapier integrations", "Business process improvements", "Practical AI-assisted solutions"],
   },
 ];
 
@@ -147,6 +97,28 @@ export const workHighlights = [
 
 export const developmentProjects = [
   {
+    slug: "kreads",
+    title: "Kreads Reading Assessment System",
+    category: "Education App",
+    platform: "Flutter for Windows & Web, Supabase",
+    url: "https://kreads-web.vercel.app/",
+    status: "Development preview",
+    theme: "education",
+    image: "/project-shots/kreads.webp",
+    gallery: [],
+    isSpotlight: true,
+    summary:
+      "A reading-assessment system with Windows reading sessions, teacher-managed materials, and a web portal for school administration and synced reports.",
+    deepDive: [
+      "Flutter supports Windows reading practice and a web portal for online administration and synced reports.",
+      "Teacher tools cover reading materials, pronunciation examples, and reading history, alongside enrollment and class administration.",
+      "Windows speech recognition uses whisper.cpp. Material drafts and completed reports can save locally and sync to Supabase when connected; initial setup and some management screens still require a connection.",
+      "English and Filipino recognition paths are implemented. Classroom-device accuracy and performance still need user testing; no measured learning outcomes are claimed.",
+    ],
+    stack: ["Flutter", "Supabase", "whisper.cpp", "SQLite", "Azure Speech", "Vercel"],
+    uploadFolder: "/project-shots/",
+  },
+  {
     slug: "dreamtripclub-booking-system",
     title: "DreamTripClub Membership Booking Platform",
     category: "Web App",
@@ -169,24 +141,47 @@ export const developmentProjects = [
   },
   {
     slug: "damla-training-enrollment-system",
-    title: "Damla Training Institute Enrollment and LMS System",
-    category: "Website + Web App",
-    platform: "Training Website, Enrollment, Dashboard, LMS",
+    title: "Damla Enrollment & Learning Management System",
+    category: "Enrollment & LMS",
+    platform: "School operations, student finance, and classroom learning",
     url: "https://damlatraining.com/",
     status: "Public site with private dashboards",
     theme: "education",
-    image: "/project-uploads/damla-training-enrollment-system/live-site.webp",
-    gallery: ["/project-uploads/damla-training-enrollment-system/1-redacted.webp"],
+    image: "/project-uploads/damla-training-enrollment-system/homepage-2026.webp",
+    gallery: ["/project-uploads/damla-training-enrollment-system/dashboard-private-values-hidden.webp"],
+    previewNote: "Dashboard preview: real counts and financial figures hidden.",
     isSpotlight: true,
     summary:
-      "A training-institute website and application experience supporting course discovery, online enrollment, dashboard workflows, and learning-management needs.",
+      "A connected school platform bringing enrollment, student finance, and classroom learning together, with dedicated portals for students, trainers, and administrators.",
     deepDive: [
-      "Positioned the public site around TESDA-registered training programs, admissions, course exploration, and enrollment calls to action.",
-      "Designed the application side for enrollment handling, learner records, dashboard workflows, and training-operation visibility.",
-      "Balanced public credibility with back-office practicality so staff can manage training operations beyond a simple brochure site.",
+      "Online and onsite enrollment, registrar review, requirements, course selection, and batch placement.",
+      "Student charges, verified payment submissions, payment allocations, balances, and finance reports.",
+      "Classroom announcements, lessons, assignments, quizzes, attendance, grading, and trainer feedback.",
     ],
-    stack: ["React", "Next.js", "Dashboard UI", "Enrollment flow", "LMS workflow", "Forms", "Admin modules"],
+    stack: ["Next.js", "Supabase", "TypeScript", "React", "Tailwind CSS", "Shadcn UI", "Server Actions"],
     uploadFolder: "/project-uploads/damla-training-enrollment-system/",
+  },
+  {
+    slug: "custom-erp-business-workflows",
+    title: "Custom ERP & Business Workflows",
+    category: "ERP & Business Systems",
+    platform: "Business processes, approvals, inventory, and reporting",
+    status: "Implementation in progress",
+    theme: "business",
+    image: "/project-shots/custom-erp-workflow.svg",
+    previewKind: "diagram",
+    previewNote: "Illustrative workflow; application screens remain private.",
+    gallery: [],
+    isSpotlight: true,
+    summary: "Business systems tailored to your processes, connecting purchasing, inventory, approvals, asset tracking, and reporting.",
+    deepDive: [
+      "Purchasing and supplier workflows with purchase-order review and approvals.",
+      "Warehouse receiving, picklists, inventory transactions, physical counts, and branch ordering.",
+      "Asset transfers, custody records, approval history, and operational reports.",
+      "Implementation in progress, with company records kept private.",
+    ],
+    stack: ["PHP", "MySQL / MariaDB", "JavaScript", "Bootstrap", "Metronic"],
+    uploadFolder: "/project-shots/",
   },
   {
     slug: "mosses-and-vanesa-rsvp-dashboard",
@@ -196,12 +191,7 @@ export const developmentProjects = [
     url: "https://www.mossesandvanesa.com/",
     status: "Public site with private event dashboard",
     theme: "event",
-    image: "/project-uploads/mosses-and-vanesa-rsvp-dashboard/online-invitation-redacted.webp",
-    gallery: [
-      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/1-redacted.webp",
-      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/2-redacted.webp",
-      "/project-uploads/mosses-and-vanesa-rsvp-dashboard/3-redacted.webp",
-    ],
+    gallery: [],
     isSpotlight: true,
     summary:
       "A custom wedding website with guest-specific digital invitations, RSVP collection, guest monitoring, event communications, and email follow-up.",
@@ -544,6 +534,7 @@ export const expertiseGroups = [
   {
     title: "IT Operations and Leadership",
     items: [
+      "Digital transformation",
       "IT operations",
       "Technical project leadership",
       "System deployment",
@@ -668,6 +659,12 @@ export const expertiseGroups = [
 ];
 
 export const timelineItems = [
+  {
+    period: "Current",
+    title: `${currentRole.title} | ${currentRole.company}`,
+    summary:
+      "Focuses on practical digital transformation in Davao City, connecting systems, improving workflows, and aligning technology with business needs.",
+  },
   {
     period: "January 2026 - Present",
     title: "Computer Systems Servicing Trainer | Damla Training Institute of Technology, Inc.",

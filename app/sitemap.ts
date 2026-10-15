@@ -1,31 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/portfolio";
-
+import { sampleProjects } from "@/lib/case-studies";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    {
-      url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${siteUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    { url: siteUrl, changeFrequency: "monthly", priority: 1 },
+    ...["/about", "/portfolio", "/work"].map((path) => ({ url: `${siteUrl}${path}`, changeFrequency: "monthly" as const, priority: .8 })),
+    ...sampleProjects.map((project) => ({ url: `${siteUrl}/work/${project.slug}`, changeFrequency: "monthly" as const, priority: .6 })),
   ];
 }
